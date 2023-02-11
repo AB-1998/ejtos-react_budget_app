@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -13,7 +13,11 @@ import Remaining from './components/Remaining';
 import ExpenseTotal from './components/ExpenseTotal';
 import ExpenseList from './components/ExpenseList';
 import AllocationForm from './components/AllocationForm';
+
+
+
 const App = () => {
+     const [name,setname]=useState()
     return (
         <AppProvider>
             <div className='container'>
@@ -31,7 +35,9 @@ const App = () => {
                     <div className='col-sm'>
                         <ExpenseTotal />
                     </div>
-                    </div>
+                    <div className='col-sm'>
+                    <select className="custom-select" id="inputGroupSelect01" onChange={(event) => setName(event.target.value)}></select>
+                    </div></div>
                 <h3 className='mt-3'>Allocation</h3>
                 <div className='row '>
                     <div className='col-sm'>
